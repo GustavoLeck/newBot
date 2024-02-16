@@ -1,0 +1,25 @@
+image: node:20-alpine
+
+prisma:
+  script:
+    - echo "Iniciando teste de conectividade com banco"
+    - echo "Prisma"
+    - npx prisma generate
+    - echo "Prisma Finalizado"
+
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+jest : 
+ script:
+    - echo "Iniciando teste Jest"
+    - npm run test
+    - echo "Jest Finalizado"
+
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
