@@ -13,7 +13,7 @@ server.listen(5500, async () => {
   ];
   console.log(commands);
   const rest = new REST({ version: "10" }).setToken(
-    "OTEzMTU0NjI1MjM3MDUzNTUx.GD6uOB.8oLlkWFuhdEqxRiEiCko30kLxsoIBqBqStkvDk"
+    "OTEzMTU0NjI1MjM3MDUzNTUx.Gd4IcE.21TyI74zCWUg3JVgQb18YB1KW9xtLan2fJt9RM"
   );
 
   try {
