@@ -1,10 +1,10 @@
 import { REST, Routes } from "discord.js";
+import { token } from "./config/tokens";
 import { server } from "./server";
 import { Ping } from "./commands/ping";
 
 server.listen(5500, async () => {
   console.clear();
-
   const commands = [
     {
       name: "ping",
@@ -13,7 +13,7 @@ server.listen(5500, async () => {
   ];
   console.log(commands);
   const rest = new REST({ version: "10" }).setToken(
-    "OTEzMTU0NjI1MjM3MDUzNTUx.Gd4IcE.21TyI74zCWUg3JVgQb18YB1KW9xtLan2fJt9RM"
+    await new token().discord()
   );
 
   try {

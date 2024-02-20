@@ -1,5 +1,5 @@
 import { Client, GatewayIntentBits } from "discord.js";
-
+import { token } from "../config/tokens";
 export class Ping {
   async execute() {
     const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -14,9 +14,7 @@ export class Ping {
       }
     });
 
-    client.login(
-      "OTEzMTU0NjI1MjM3MDUzNTUx.Gd4IcE.21TyI74zCWUg3JVgQb18YB1KW9xtLan2fJt9RM"
-    );
+    client.login(await new token().discord());
     return;
   }
 }
