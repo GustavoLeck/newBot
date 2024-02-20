@@ -4,8 +4,8 @@ services:
   api:
     build: .
     restart: on-failure
-    container_name: ts-crud
-    image: ts-crud
+    container_name: bot-discord
+    image: bot-discord
     command: npm run start
     ports:
       - "5500:5500"
