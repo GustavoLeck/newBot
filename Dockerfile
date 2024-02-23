@@ -6,11 +6,10 @@ COPY package*.json ./
 COPY prisma ./prisma/
 COPY . .
 
-RUN npm i
 RUN apk update
 RUN apk add
 RUN apk add ffmpeg
-
+RUN npm i
 RUN npx prisma generate 
 
 
