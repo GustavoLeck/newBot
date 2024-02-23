@@ -2,9 +2,9 @@ FROM node:18-alpine
 
 WORKDIR /usr/src/app
 
-# COPY package*.json ./
+COPY package*.json ./
 # COPY prisma ./prisma/
-# COPY . .
+COPY . .
 
 RUN apk update
 RUN apk add
