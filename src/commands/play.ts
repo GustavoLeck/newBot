@@ -2,14 +2,13 @@ import { useMainPlayer } from "discord-player";
 
 export class Play {
   async execute(interaction: any) {
-    console.log("Teste Play");
     try {
       await interaction.deferReply();
 
       const player = useMainPlayer();
       const channel = interaction.member.voice.channel;
       if (!channel)
-        return interaction.reply(
+        return interaction.followUp(
           "Você não está conectado em nenhum canal de voz!"
         );
       let value = interaction.options.getString("musica", true);
