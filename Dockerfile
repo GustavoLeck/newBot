@@ -6,7 +6,7 @@ COPY ./package.json .
 COPY prisma ./prisma/
 COPY . .
 
-RUN apt install ffmpeg -y
+RUN sudo apt install ffmpeg -y
 RUN npm i
 RUN npx prisma generate 
 RUN npm run test
