@@ -1,5 +1,5 @@
-FROM katalonstudio/katalon
 FROM node:20-alpine
+FROM katalonstudio/katalon
 
 WORKDIR /usr/app
 
