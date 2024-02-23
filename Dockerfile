@@ -1,4 +1,4 @@
-FROM katalonstudio/katalon
+FROM node:20-alpine
 
 WORKDIR /usr/app
 
@@ -6,10 +6,10 @@ COPY ./package.json .
 COPY prisma ./prisma/
 COPY . .
 
-RUN apt-get -y update
-RUN apt-get install -y ffmpeg
-RUN apt-get install -y node
 RUN npm i
+RUN apk update
+RUN apk add
+RUN apk add ffmpeg
 
 RUN npx prisma generate 
 
