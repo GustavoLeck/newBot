@@ -1,5 +1,5 @@
 import { Client, GatewayIntentBits } from "discord.js";
-import { PlayerConfig } from "../player-config";
+import { PlayerConfig } from "./player-config";
 import { Token } from "../../config/tokens";
 import { Ping } from "../ping";
 import { Play } from "../play";

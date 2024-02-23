@@ -1,3 +1,4 @@
+import { ApplicationCommandOptionType } from "discord.js";
 const commands = [
   {
     name: "ping",
@@ -6,6 +7,14 @@ const commands = [
   {
     name: "play",
     description: "Reproduz música desejada",
+    options: [
+      {
+        name: "musica",
+        description: "Valor a ser pesquisado",
+        type: ApplicationCommandOptionType.String,
+        required: true,
+      },
+    ],
   },
 ];
 export { commands };

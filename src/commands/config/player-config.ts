@@ -7,7 +7,7 @@ export class PlayerConfig {
       (ext: any) => ext !== "YouTubeExtractor"
     );
     player.events.on("playerStart", (queue: any, track: any) => {
-      queue.metadata.channel.send(`Começou a tocar: \n\n => ${track.title}!`);
+      queue.metadata.channel.send(`Começou a tocar: \n\n => ${track.title}`);
     });
     return;
   }

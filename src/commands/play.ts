@@ -12,15 +12,14 @@ export class Play {
         return interaction.reply(
           "Você não está conectado em nenhum canal de voz!"
         );
-      // let query = interaction.options.getString("query", true);
-
-      let query = "Stairway to heaven";
-      const { track } = await player.play(channel, query, {
+      let value = interaction.options.getString("musica", true);
+      console.log(value);
+      const { track } = await player.play(channel, value, {
         nodeOptions: {
           metadata: interaction,
         },
       });
-      return interaction.followUp(`${track.title}\n\n=> Adicionado na fila!`);
+      return interaction.followUp(`${track.title}\n\n=> Adicionado na fila`);
     } catch (error) {
       return interaction.followUp(`Ocorreu um erro na operação: ${error}`);
     }
