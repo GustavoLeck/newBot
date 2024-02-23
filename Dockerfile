@@ -9,8 +9,7 @@ COPY . .
 RUN apk update
 RUN apk add
 RUN apk add ffmpeg
-RUN npm install --force
-RUN npm install mediaplex
+RUN npm install --save mediaplex
 # RUN npx prisma generate 
 
 
