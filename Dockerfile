@@ -9,7 +9,7 @@ COPY . .
 RUN apk update
 RUN apk add
 RUN apk add ffmpeg
-RUN npm i
+RUN npm install --force
 RUN npx prisma generate 
 
 
