@@ -2,16 +2,19 @@ import { useMainPlayer } from "discord-player";
 
 export class Play {
   async execute(interaction: any) {
+    console.log("Teste Play");
     try {
+      await interaction.deferReply();
+
       const player = useMainPlayer();
       const channel = interaction.member.voice.channel;
       if (!channel)
         return interaction.reply(
           "Você não está conectado em nenhum canal de voz!"
         );
-      const query = interaction.options.getString("query", true);
-      await interaction.deferReply();
+      // let query = interaction.options.getString("query", true);
 
+      let query = "Stairway to heaven";
       const { track } = await player.play(channel, query, {
         nodeOptions: {
           metadata: interaction,
