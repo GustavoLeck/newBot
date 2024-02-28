@@ -4,7 +4,10 @@ export class PlayerConfig {
   async execute(client: any) {
     const player = new Player(client);
     await player.extractors.loadDefault(
-      (ext: any) => ext !== "YouTubeExtractor"
+      (ext) =>
+        ext === "YouTubeExtractor" ||
+        ext === "SpotifyExtractor" ||
+        ext === "AttachmentExtractor"
     );
     player.events.on("playerStart", (queue: any, track: any) => {
       queue.metadata.channel.send(`Começou a tocar: \n\n => ${track.title}`);

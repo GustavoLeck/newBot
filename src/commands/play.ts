@@ -6,11 +6,13 @@ export class Play {
       await interaction.deferReply();
 
       const player = useMainPlayer();
-      const channel = interaction.member.voice.channel;
-      if (!channel)
+      const { channel } = interaction.member.voice;
+
+      if (!channel) {
         return interaction.followUp(
           "Você não está conectado em nenhum canal de voz!"
         );
+      }
       let value = interaction.options.getString("musica", true);
       console.log(value);
       const { track } = await player.play(channel, value, {
